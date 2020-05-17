@@ -5,6 +5,9 @@ import pl.sda.mvc.Model.Components.*;
 import pl.sda.mvc.Model.GiantModel;
 import pl.sda.mvc.View.GiantView;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class GiantBuilder {
 
     public static GiantController buildGiant(){
@@ -15,12 +18,18 @@ public class GiantBuilder {
         return new GiantController(buildGiantModel(health, fatigue, nourishment), buildGiantView());
     }
 
-    private static GiantModel buildGiantModel(Health health, Fatigue fatigue, Nourishment nourishment){
-        return new GiantModel(health, fatigue, nourishment);
+
+
+    private static List<GiantModel> buildGiantModel(Health health, Fatigue fatigue, Nourishment nourishment){
+        LinkedList<GiantModel> list = new LinkedList<GiantModel>();
+        list.add(new GiantModel(health, fatigue, nourishment));
+        return list;
     }
 
-    private static GiantModel buildGiantModel(){
-        return new GiantModel(Health.HEALTHY, Fatigue.FRESH, Nourishment.FULL);
+    private static List<GiantModel> buildGiantModel(){
+        LinkedList<GiantModel> list = new LinkedList<GiantModel>();
+        list.add(new GiantModel(Health.HEALTHY, Fatigue.FRESH, Nourishment.FULL));
+        return list;
     }
 
     private static GiantView buildGiantView(){

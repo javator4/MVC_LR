@@ -16,10 +16,10 @@ public class App
         GiantController giantController = GiantBuilder.buildGiant();
 
         giantController.updateView();
-        giantController.setFatigue(Fatigue.TIRED);
+        giantController.setFatigue(Fatigue.TIRED, 1);
         giantController.updateView();
-        giantController.getFatigue();
-        giantController.setHealth(Health.DEAD);
+        giantController.getFatigue(1);
+        giantController.setHealth(Health.DEAD, 1);
         giantController.updateView();
     }
 }

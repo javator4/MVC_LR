@@ -8,6 +8,8 @@ public class GiantView {
     }
 
     public void displayGiant(GiantModel giantModel){
-        //TODO
+        System.out.println("HEALTH: " + giantModel.getHealth());
+        System.out.println("FATIGUE: " + giantModel.getFatigue());
+        System.out.println("NOURISHMENT: " + giantModel.getNourishment());
     }
 }
